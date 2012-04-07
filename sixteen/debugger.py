@@ -68,9 +68,9 @@ class Debugger(object):
 			return self.cpu.registers[r]
 
 	def continue_until(self, pc):
-		"Continue until PC is at the greater than the given address."
+		"Continue until PC is at the given address."
 		while True:
-			if self.cpu.registers["PC"] > int(pc, base=16):
+			if self.cpu.registers["PC"] == int(pc, base=16):
 				break
 			print self.step()
 		return "<<"
